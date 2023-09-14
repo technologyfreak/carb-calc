@@ -4,7 +4,7 @@
 
 ## Usage
 
-Click on any of the numbers above the ${\color{orange}separator}$ at the bottom and fill them with the corresponding info. Once all the info has been entered. Click on the ${\color{green}\bold{Calculate}}$ button. Otherwise if you want to clear all the numbers and start over, simply click the ${\color{red}\bold{Clear}}$ button.
+Click on any of the numbers above the ${\color{orange}separator}$ at the bottom and fill them with the corresponding info. Once all the info has been entered. Click on the ${\color{green}Calculate}$ button. Otherwise if you want to clear all the numbers and start over, simply click the ${\color{red}Clear}$ button.
 
 ## 🧞 Commands
 
