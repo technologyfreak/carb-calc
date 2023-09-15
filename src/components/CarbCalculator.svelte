@@ -1,4 +1,6 @@
 <script lang="ts">
+  import ColorPicker from "./ColorPicker.svelte";
+
   let carbs = 0;
   let dietaryFiber = 0;
   let fiber = 0;
@@ -7,6 +9,8 @@
   let solubleFiber = 0;
   let sugarAlcohol = 0;
   let sugars = 0;
+  let inputBackgroundColor = "#fdffde";
+  let inputBorderColor = "#ffeaa3";
 
   function calculate() {
     let deductibleFiber = dietaryFiber + insolubleFiber;
@@ -33,7 +37,23 @@
   }
 </script>
 
+<div class="m-5">
+  <ColorPicker
+    bind:value={inputBackgroundColor}
+    label="Input Background Color"
+    id="input-background-color"
+    name="input-background-color" />
+</div>
+<div class="m-5">
+  <ColorPicker
+    bind:value={inputBorderColor}
+    label="Input Border Color"
+    id="input-border-color"
+    name="input-border-color" />
+</div>
+
 <div
+  style="--input-background-color: {inputBackgroundColor}; --input-border-color: {inputBorderColor};"
   class="flex flex-col justify-center items-center gap-1 bg-white rounded-md">
   <div>
     <fieldset>
@@ -141,10 +161,24 @@
     width: 15ch;
   }
 
+  li {
+    margin: 0.5ch;
+    padding: 0.5ch;
+  }
+
   input[type="number"] {
     appearance: textfield;
     text-align: right;
-    text-decoration: underline;
     width: 5ch;
+    height: 1ch;
+    margin: 0.25ch;
+    padding: 1.1ch;
+  }
+
+  input[type="number"]:enabled {
+    border-radius: 0.5ch;
+    border-width: 0.3ch;
+    border-color: var(--input-border-color);
+    background-color: var(--input-background-color);
   }
 </style>

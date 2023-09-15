@@ -1,9 +1,10 @@
 ---
 import CarbCalculator from "../components/CarbCalculator.svelte";
-import NutritionFacts from "../components/CarbCalculator.svelte";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Carb Calc">
-  <div class="container mx-auto"><CarbCalculator client:only /></div>
+  <div class="container mx-auto">
+    <CarbCalculator client:only />
+  </div>
 </Layout>

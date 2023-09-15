@@ -1,12 +1,11 @@
+const plugin = require("tailwindcss/plugin");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  theme: {
-    extend: {},
-  },
   plugins: [
-    ({ addComponents, theme }) => {
-      addComponents({
+    plugin(function ({ addUtilities }) {
+      addUtilities({
         ".text-gradient-to-t,.text-gradient-to-tr,.text-gradient-to-r,.text-gradient-to-br,.text-gradient-to-b,.text-gradient-to-bl,.text-gradient-to-l,.text-gradient-to-tl":
           {
             color: "transparent",
@@ -47,10 +46,6 @@ module.exports = {
             "linear-gradient(to top left, var(--tw-gradient-stops))",
         },
       });
-    },
-    ({ addVariant }) => {
-      addVariant("child", "& > *");
-      addVariant("child-hover", "& > *:hover");
-    },
+    }),
   ],
 };
